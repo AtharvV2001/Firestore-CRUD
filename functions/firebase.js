@@ -1,6 +1,11 @@
+import dotenv from 'dotenv';
 import { initializeApp, cert } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
-import serviceAccount from '../serviceAccountKey.json' assert { type: 'json' }; // Your Firebase credentials
+dotenv.config();
+// Decode the Base64 string and parse it as JSON
+const serviceAccount = JSON.parse(Buffer.from(process.env.FIREBASE_SERVICE_ACCOUNT_KEY, 'base64').toString('utf-8'));
+
+
 
 // Firebase configuration
 const firebaseConfig = {
