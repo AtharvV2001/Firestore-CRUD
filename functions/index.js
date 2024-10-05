@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { db } from "./firebase.js";
+import { db } from "../firebase.js";
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 
@@ -177,9 +177,9 @@ server.get("/:collection", async (req, res) => {
 });
 
 // Start the server
-server.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-  console.log(`Swagger docs available at http://localhost:${port}/api-docs`);
-});
+// server.listen(port, () => {
+//   console.log(`Server running on http://localhost:${port}`);
+//   console.log(`Swagger docs available at http://localhost:${port}/api-docs`);
+// });
 
 export default server;
